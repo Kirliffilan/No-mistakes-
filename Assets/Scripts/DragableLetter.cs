@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DragableLetter : Letter
 {
-    private void Update()
-    {
-        //движение по кругу
-    }
-
+    char Letter => _letter;
     private void OnMouseDrag()
     {
         //движение по нажатию мыши (метод можно поменять)
     }
 
-    public override bool Validate() => true;
+    public override bool Validate() => true; //это на всякий случай, если эти буквы тоже будете проверять (лучше не надо)
 }

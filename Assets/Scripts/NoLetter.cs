@@ -1,17 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class NoLetter : Letter
 {
     [SerializeField] private char _requiredLetter;
-    private char _letter = '_';
-
+    public static event Action WrongLetter;
+    private void Awake()
+    {
+        _letter = '_';
+    }
     public override bool Validate()
     {
         if (!base.Validate()) return false;
 
-        //логика проверки буквы
+        //логика проверки буквы + ее замена в случае правильной подстановки (исчезновение в т.ч), возвращение наводимой на место в противном случае +
+        // WrongLetter?.Invoke(); //в случае неправильной буквы
+
+        // в обоих случаях лучше вынести в методы
 
         return true;
     }

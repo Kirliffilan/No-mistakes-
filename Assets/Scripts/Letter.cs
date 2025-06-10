@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Letter : MonoBehaviour
 {
-    [SerializeField] private char _letter;
-    private bool _isMuded = false;
-    private void GetMud()
+    [SerializeField] protected char _letter;
+    protected bool _isMuded = false;
+    public void GetMud()
     {
         _isMuded = true;
         //тут скорее всего спавн грязи будет
     }
 
-    private void BreakMud()
+    public void BreakMud()
     {
         _isMuded = false;
     }
