@@ -14,5 +14,5 @@ public class DragableLetter : Letter
         //движение по нажатию мыши (метод можно поменять)
     }
 
-    public override bool CheckValidate() => true;
+    public override bool Validate() => true;
 }

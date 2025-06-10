@@ -7,9 +7,9 @@ public class NoLetter : Letter
     [SerializeField] private char _requiredLetter;
     private char _letter = '_';
 
-    public override bool CheckValidate()
+    public override bool Validate()
     {
-        if (!base.CheckValidate()) return false;
+        if (!base.Validate()) return false;
 
         //логика проверки буквы
 

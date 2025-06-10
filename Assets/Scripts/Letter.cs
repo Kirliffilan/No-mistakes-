@@ -15,7 +15,7 @@ public class Letter : MonoBehaviour
         _isMuded = false;
     }
 
-    public virtual bool CheckValidate()
+    public virtual bool Validate()
     {
         if (_isMuded) return false;
         return true;
