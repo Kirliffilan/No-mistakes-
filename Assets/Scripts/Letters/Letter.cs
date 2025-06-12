@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Letter : MonoBehaviour
 {
-    [SerializeField] protected char _letter;
     protected bool _isMuded = false;
+    public bool IsMuded => _isMuded;
     public void GetMud()
     {
         _isMuded = true;

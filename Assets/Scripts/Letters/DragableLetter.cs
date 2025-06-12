@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class DragableLetter : Letter
 {
-    char Letter => _letter;
+    [SerializeField] private char _letter;
+    public char Letter => _letter;
     private void OnMouseDrag()
     {
         //движение по нажатию мыши (метод можно поменять)
