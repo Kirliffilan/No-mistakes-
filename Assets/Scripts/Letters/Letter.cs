@@ -4,10 +4,17 @@ public class Letter : MonoBehaviour
 {
     protected bool _isMuded = false;
     public bool IsMuded => _isMuded;
+    private Mud _mud;
+
+    private void Awake()
+    {
+        _mud = GetComponentInChildren<Mud>(true);
+        _mud.MudDisabled += BreakMud;
+    }
     public void GetMud()
     {
         _isMuded = true;
-        //тут скорее всего спавн грязи будет
+        _mud.gameObject.SetActive(true);
     }
 
     public void BreakMud()
