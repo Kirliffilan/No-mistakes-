@@ -6,9 +6,11 @@ public class ChoosableLetter : Letter
     [SerializeField] private bool _isCorrect;
     public static event Action WrongLetter;
 
+    public bool IsPaused;
+
     public void OnClick()
     {
-        if (_isMuded) return;
+        if (IsMuded || IsPaused) return;
 
         if (_isCorrect)
         {

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Letter : MonoBehaviour
 {
-    protected bool _isMuded = false;
+    private bool _isMuded = false;
     public bool IsMuded => _isMuded;
     private Mud _mud;
 

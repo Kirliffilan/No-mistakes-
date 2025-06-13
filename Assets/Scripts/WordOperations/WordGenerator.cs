@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WordGenerator : MonoBehaviour
 {
-    public static WordGenerator Instance;
+    public static WordGenerator Instance { get; private set; }
 
     [SerializeField] private bool _isRandom;
     [SerializeField] private Word[] _words;
@@ -13,7 +13,11 @@ public class WordGenerator : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        GetNewWord();
     }
+
+    public void StopValidate() => _currentWord.StopValidate();
+    public void StartValidate() => _currentWord.StartValidate();
 
     public void GetNewWord()
     {
