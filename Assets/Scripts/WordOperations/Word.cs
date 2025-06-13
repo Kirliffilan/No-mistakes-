@@ -3,25 +3,29 @@ using UnityEngine;
 
 public class Word : MonoBehaviour
 {
-    public Letter[] WordLetters { get; private set; }
-
+    public static Word Instance;
+    private Letter[] _wordLetters;
+    private bool _isCorrect;
+    
     private void Awake()
     {
-        WordLetters = GetComponentsInChildren<Letter>();
+        Instance = this;
+        _wordLetters = GetComponentsInChildren<Letter>();
+    }
+
+    public void MarkAsCorrect()
+    {
+        _isCorrect = true;
+        Debug.Log("Slovo horosho");
     }
 
     public void CheckMud()
     {
-        bool check = false;
-        while (!check)
-        {
-            check = true;
-            foreach (Letter letter in WordLetters.Where(l => l is not DragableLetter))
-            {
-                if (letter.IsMuded) check = false;
-                break;
-            }
-        }
+        if (!_isCorrect) return;
+        foreach (Letter letter in _wordLetters.Where(l => l is not ChoosableLetter))
+            if (letter.IsMuded) return;
         Destroy(gameObject);
+        Debug.Log("Slovo chistoe");
+        WordGenerator.Instance.GetNewWord();
     }
 }

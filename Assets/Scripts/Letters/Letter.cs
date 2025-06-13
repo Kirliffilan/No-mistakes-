@@ -11,6 +11,7 @@ public class Letter : MonoBehaviour
         _mud = GetComponentInChildren<Mud>(true);
         _mud.MudDisabled += BreakMud;
     }
+
     public void GetMud()
     {
         _isMuded = true;
@@ -20,6 +21,7 @@ public class Letter : MonoBehaviour
     public void BreakMud()
     {
         _isMuded = false;
+        Word.Instance.CheckMud();
     }
 
     public virtual bool Validate()
