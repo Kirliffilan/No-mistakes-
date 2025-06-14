@@ -23,10 +23,4 @@ public class Letter : MonoBehaviour
         _isMuded = false;
         Word.Instance.CheckMud();
     }
-
-    public virtual bool Validate()
-    {
-        if (_isMuded) return false;
-        return true;
-    }
 }

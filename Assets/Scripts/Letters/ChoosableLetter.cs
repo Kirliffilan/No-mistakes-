@@ -22,6 +22,4 @@ public class ChoosableLetter : Letter
             WrongLetter?.Invoke();
         }
     }
-
-    public override bool Validate() => true; //это на всякий случай, если эти буквы тоже будете проверять (лучше не надо)
 }

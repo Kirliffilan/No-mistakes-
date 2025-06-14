@@ -56,5 +56,4 @@ public class Timer : MonoBehaviour
     {
         StopTimer();
     }
-
 }

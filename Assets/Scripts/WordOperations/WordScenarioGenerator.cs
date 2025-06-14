@@ -12,7 +12,6 @@ public class WordScenarioGenerator : MonoBehaviour
     private bool _isPlayed;
 
     protected Word _currentWord;
-
     private void Awake()
     {
         Instance = this;
@@ -50,6 +49,7 @@ public class WordScenarioGenerator : MonoBehaviour
             ShowEnd();
             return;
         }
+
         GetWordAt(_currentIndex++);
         if (_currentIndex >= _words.Length)
         {

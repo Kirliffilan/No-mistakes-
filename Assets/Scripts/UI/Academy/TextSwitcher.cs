@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class TextSwitcher : MonoBehaviour
@@ -15,9 +16,12 @@ public class TextSwitcher : MonoBehaviour
     private string[] _text;
     private bool _isGameStarted;
 
+    private static string MAIN_MENU = "MainMenu";
+
     private void Awake()
     {
         _textMeshProUGUI = GetComponent<TextMeshProUGUI>();
+        _currentIndex = 0;
         _text = _inputFile.text.Split(new string[] { "\n", "\r", "\n\r" }, StringSplitOptions.RemoveEmptyEntries);
         ChangeText();
     }
@@ -27,6 +31,11 @@ public class TextSwitcher : MonoBehaviour
         if (_currentIndex % 3 == 0 && !_isGameStarted && _currentIndex != 0)
         {
             StartGame();
+            return;
+        }
+        if (_currentIndex == _text.Length)
+        {
+            SceneManager.LoadScene(MAIN_MENU);
             return;
         }
         _isGameStarted = false;
