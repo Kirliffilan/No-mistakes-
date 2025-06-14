@@ -51,6 +51,13 @@ public class WordScenarioGenerator : MonoBehaviour
             return;
         }
         GetWordAt(_currentIndex++);
+        if (_currentIndex >= _words.Length)
+        {
+            _currentWord.GetRandomMud();
+            _currentWord.GetRandomMud();
+            _currentWord.GetRandomMud();
+            _currentWord.GetRandomMud();
+        }
         _isPlayed = true;
     }
 

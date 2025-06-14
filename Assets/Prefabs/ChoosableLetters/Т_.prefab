@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3218646155042291795, guid: 92c8d367878dde947aca45341df4674b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3218646155042291795, guid: 92c8d367878dde947aca45341df4674b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -30,15 +30,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3218646155042291795, guid: 92c8d367878dde947aca45341df4674b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3218646155042291795, guid: 92c8d367878dde947aca45341df4674b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3218646155042291795, guid: 92c8d367878dde947aca45341df4674b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3218646155042291795, guid: 92c8d367878dde947aca45341df4674b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,11 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3218646155042291795, guid: 92c8d367878dde947aca45341df4674b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 100
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 3218646155042291795, guid: 92c8d367878dde947aca45341df4674b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 3218646155042291795, guid: 92c8d367878dde947aca45341df4674b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -90,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6483976391594465276, guid: 92c8d367878dde947aca45341df4674b, type: 3}
       propertyPath: m_Name
-      value: "\u0422"
+      value: "\u0422_"
       objectReference: {fileID: 0}
     - target: {fileID: 8087277469075290829, guid: 92c8d367878dde947aca45341df4674b, type: 3}
       propertyPath: m_Sprite

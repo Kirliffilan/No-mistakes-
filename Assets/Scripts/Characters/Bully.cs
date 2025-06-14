@@ -6,8 +6,8 @@ public class Bully : MonoBehaviour
 {
     public static Bully Instance { get; private set; }
 
-    [SerializeField] private float _maxCooldown = 7f;
-    [SerializeField] private float _minCooldown = 3f;
+    [SerializeField] private float _maxCooldown = 5f;
+    [SerializeField] private float _minCooldown = 2f;
 
     private float _currentCooldown;
 
@@ -21,6 +21,21 @@ public class Bully : MonoBehaviour
         _animator = GetComponent<Animator>();
         ResetCooldown();
         StartThrowing();
+    }
+
+    private void OnEnable()
+    {
+        ChoosableLetter.WrongLetter += Laugh;
+    }
+
+    private void OnDisable()
+    {
+        ChoosableLetter.WrongLetter -= Laugh;
+    }
+
+    private void Laugh()
+    {
+        _animator.SetTrigger(LAUGH);
     }
 
     public void StartThrowing() => StartCoroutine(ThrowMud());
@@ -42,8 +57,7 @@ public class Bully : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_currentCooldown);
-            //_animator.SetTrigger(THROW);
-            Throw();
+            _animator.SetTrigger(THROW);
         }
     }
 

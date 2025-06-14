@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 762858490316760121, guid: 1c7306371f1f735468f24305e21db438, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 762858490316760121, guid: 1c7306371f1f735468f24305e21db438, type: 3}
       propertyPath: m_AnchorMin.x
@@ -30,15 +30,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 762858490316760121, guid: 1c7306371f1f735468f24305e21db438, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 762858490316760121, guid: 1c7306371f1f735468f24305e21db438, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 762858490316760121, guid: 1c7306371f1f735468f24305e21db438, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 762858490316760121, guid: 1c7306371f1f735468f24305e21db438, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,11 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 762858490316760121, guid: 1c7306371f1f735468f24305e21db438, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 100
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 762858490316760121, guid: 1c7306371f1f735468f24305e21db438, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 762858490316760121, guid: 1c7306371f1f735468f24305e21db438, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: -1417937913, guid: 7c4d957600fdebb4ebdba5d648f8cc7f, type: 3}
     - target: {fileID: 9207447200479605654, guid: 1c7306371f1f735468f24305e21db438, type: 3}
       propertyPath: m_Name
-      value: "\u0426"
+      value: "\u0426_"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
