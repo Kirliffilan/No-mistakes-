@@ -1,22 +1,23 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
+[RequireComponent(typeof(Text))]
 public class ShowAnswers : MonoBehaviour
 {
     [SerializeField] private TextAsset _inputFile;
     [SerializeField] private GameObject _textField;
     [SerializeField] private WordScenarioGenerator _wordScenarioGenerator;
 
-    private TextMeshProUGUI _textMeshProUGUI;
+    private Text _textChange;
 
     private static int _currentIndex;
     private string[] _text;
 
     private void Awake()
     {
-        _textMeshProUGUI = GetComponent<TextMeshProUGUI>();
+        _textChange = GetComponent<Text>();
         _text = _inputFile.text.Split(new string[] { "\n", "\r", "\n\r" }, StringSplitOptions.RemoveEmptyEntries);
     }
 
@@ -33,7 +34,7 @@ public class ShowAnswers : MonoBehaviour
     public void ShowText()
     {
         Teacher.Instance.StartTalking();
-        _textMeshProUGUI.text = _text[_currentIndex];
+        _textChange.text = _text[_currentIndex];
     }
 
     public void RemoveText()
