@@ -4,6 +4,9 @@ using UnityEngine;
 public class Word : MonoBehaviour
 {
     public static Word Instance { get; private set; }
+
+    public bool IsAcademy;
+
     private Letter[] _wordLetters;
     private bool _isCorrect;
     
@@ -11,6 +14,18 @@ public class Word : MonoBehaviour
     {
         Instance = this;
         _wordLetters = GetComponentsInChildren<Letter>();
+    }
+
+    private void OnEnable()
+    {
+        ChoosableLetter.CorrectLetter += MarkAsCorrect;
+        ChoosableLetter.CorrectLetter += CheckMud;
+    }
+
+    private void OnDisable()
+    {
+        ChoosableLetter.CorrectLetter -= MarkAsCorrect;
+        ChoosableLetter.CorrectLetter -= CheckMud;
     }
 
     public void StopValidate()
@@ -39,9 +54,17 @@ public class Word : MonoBehaviour
         if (!_isCorrect) return;
         foreach (Letter letter in _wordLetters.Where(l => l is not ChoosableLetter))
             if (letter.IsMuded) return;
-        Score.Instance.AddScore();
-        Timer.Instance.AddTime();
-        WordGenerator.Instance.GetNewWord();
+        if (IsAcademy)
+        {
+            WordScenarioGenerator.Instance.GetNewWord();
+        }
+        else
+        {
+            WordGenerator.Instance.GetNewWord();
+            Score.Instance.AddScore();
+            Timer.Instance.AddTime();
+        }
+        
     }
 
     public void GetRandomMud()

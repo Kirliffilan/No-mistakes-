@@ -1,14 +1,13 @@
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class WordGenerator : MonoBehaviour
 {
     public static WordGenerator Instance { get; private set; }
 
-    [SerializeField] private bool _isRandom;
     [SerializeField] private Word[] _words;
 
     private Word _currentWord;
-    private int _currentIndex;
 
     private void Awake()
     {
@@ -19,10 +18,9 @@ public class WordGenerator : MonoBehaviour
     public void StopValidate() => _currentWord.StopValidate();
     public void StartValidate() => _currentWord.StartValidate();
 
-    public void GetNewWord()
+    public virtual void GetNewWord()
     {
-        if (_isRandom) GetRandomWord();
-        else GetWordAt(_currentIndex++);
+        GetRandomWord();
     }
 
     private void GetRandomWord()
@@ -34,8 +32,6 @@ public class WordGenerator : MonoBehaviour
     {
         if (index < 0 || index >= _words.Length)
         {
-            if (_currentIndex == index) _currentIndex = 0; //можно заканчивать обучение в этом случае
-
             Debug.LogError($"Index {index} is out of bounds for words array!");
             return;
         }

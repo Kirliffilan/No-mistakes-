@@ -5,6 +5,7 @@ public class ChoosableLetter : Letter
 {
     [SerializeField] private bool _isCorrect;
     public static event Action WrongLetter;
+    public static event Action CorrectLetter;
 
     public bool IsPaused;
 
@@ -14,8 +15,7 @@ public class ChoosableLetter : Letter
 
         if (_isCorrect)
         {
-            Word.Instance.MarkAsCorrect();
-            Word.Instance.CheckMud();
+            CorrectLetter?.Invoke();
         }
         else
         {

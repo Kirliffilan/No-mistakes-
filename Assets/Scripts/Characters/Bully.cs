@@ -6,7 +6,7 @@ public class Bully : MonoBehaviour
 {
     public static Bully Instance { get; private set; }
 
-    [SerializeField] private float _maxCooldown = 10f;
+    [SerializeField] private float _maxCooldown = 7f;
     [SerializeField] private float _minCooldown = 3f;
 
     private float _currentCooldown;
@@ -19,15 +19,22 @@ public class Bully : MonoBehaviour
     {
         Instance = this;
         _animator = GetComponent<Animator>();
-        _currentCooldown = _maxCooldown;
-        StartCoroutine(ThrowMud());
+        ResetCooldown();
+        StartThrowing();
     }
+
+    public void StartThrowing() => StartCoroutine(ThrowMud());
 
     public void ReduceCooldown()
     {
         if (_currentCooldown <= _minCooldown) return;
         Debug.Log(_currentCooldown);
         _currentCooldown -= 1;
+    }
+
+    public void ResetCooldown()
+    {
+        _currentCooldown = _maxCooldown;
     }
 
     private IEnumerator ThrowMud()
@@ -40,7 +47,7 @@ public class Bully : MonoBehaviour
         }
     }
 
-    public void Throw()
+    private void Throw()
     {
         Word.Instance.GetRandomMud();
     }

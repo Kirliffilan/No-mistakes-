@@ -148,4 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startTime: 10
-  _addingTime: 0.2
+  _addingTime: 0.3

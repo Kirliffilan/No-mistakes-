@@ -93,7 +93,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7576923538544385058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0410"
       objectReference: {fileID: 0}
+    - target: {fileID: 3602331920346640606, guid: d51996f86127b214c8fe007d2d75c6de, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3775128811677190130, guid: d51996f86127b214c8fe007d2d75c6de, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -142,6 +146,10 @@ PrefabInstance:
     - target: {fileID: 3775128811677190130, guid: d51996f86127b214c8fe007d2d75c6de, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133146806194785995, guid: d51996f86127b214c8fe007d2d75c6de, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8673594019742127290, guid: d51996f86127b214c8fe007d2d75c6de, type: 3}
       propertyPath: m_Pivot.x
@@ -325,6 +333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0420"
       objectReference: {fileID: 0}
+    - target: {fileID: 8663719765895607223, guid: 7328c0383f21387468bedd8b09cb3e66, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9054004731196703899, guid: 7328c0383f21387468bedd8b09cb3e66, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -357,6 +369,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 842249552544830097, guid: 995aa04af8db50f48b2f85aeb1c29fd5, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021679320784561597, guid: 995aa04af8db50f48b2f85aeb1c29fd5, type: 3}
+      propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1756526673514490224, guid: 995aa04af8db50f48b2f85aeb1c29fd5, type: 3}
@@ -567,6 +583,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0412"
       objectReference: {fileID: 0}
+    - target: {fileID: 3613058420754770872, guid: 80e348bc6e3419e4481e85af24a7f15f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4015477011257564308, guid: 80e348bc6e3419e4481e85af24a7f15f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -679,6 +699,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 840981076686175284, guid: a92f12bc21b3e854cb985a5e08dec1c7, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024073833552218904, guid: a92f12bc21b3e854cb985a5e08dec1c7, type: 3}
+      propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1764260861423814613, guid: a92f12bc21b3e854cb985a5e08dec1c7, type: 3}
@@ -967,6 +991,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2318604704927274516, guid: cacce67ec38ccb543bfb201696f9097d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605894448741626480, guid: cacce67ec38ccb543bfb201696f9097d, type: 3}
+      propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7786845632438682972, guid: cacce67ec38ccb543bfb201696f9097d, type: 3}
