@@ -9,7 +9,16 @@ public class Letter : MonoBehaviour
     private void Awake()
     {
         _mud = GetComponentInChildren<Mud>(true);
+    }
+
+    private void OnEnable()
+    {
         _mud.MudDisabled += BreakMud;
+    }
+
+    private void OnDisable()
+    {
+        _mud.MudDisabled -= BreakMud;
     }
 
     public void GetMud()

@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 public class Bully : MonoBehaviour
 {
     public static Bully Instance { get; private set; }
@@ -14,11 +15,14 @@ public class Bully : MonoBehaviour
     private Animator _animator;
     private const string LAUGH = "Laugh";
     private const string THROW = "Throw";
+    
+    private AudioSource _audioSource;
 
     private void Awake()
     {
         Instance = this;
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         ResetCooldown();
         StartThrowing();
     }
@@ -36,6 +40,7 @@ public class Bully : MonoBehaviour
     private void Laugh()
     {
         _animator.SetTrigger(LAUGH);
+        _audioSource.Play();
     }
 
     public void StartThrowing() => StartCoroutine(ThrowMud());
@@ -43,7 +48,7 @@ public class Bully : MonoBehaviour
     public void ReduceCooldown()
     {
         if (_currentCooldown <= _minCooldown) return;
-        Debug.Log(_currentCooldown);
+
         _currentCooldown -= 1;
     }
 

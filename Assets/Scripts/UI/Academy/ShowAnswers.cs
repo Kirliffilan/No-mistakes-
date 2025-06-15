@@ -19,6 +19,7 @@ public class ShowAnswers : MonoBehaviour
     {
         _textChange = GetComponent<Text>();
         _text = _inputFile.text.Split(new string[] { "\n", "\r", "\n\r" }, StringSplitOptions.RemoveEmptyEntries);
+        _currentIndex = 0;
     }
 
     private void OnEnable()

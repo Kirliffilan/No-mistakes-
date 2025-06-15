@@ -2,26 +2,28 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
+[RequireComponent(typeof(Text))]
 public class Timer : MonoBehaviour
 {
     public static Timer Instance { get; private set; }
-    public static event Action EndGame;
 
     [SerializeField] private float _startTime = 10f;
     [SerializeField] private float _addingTime = 0.2f;
+    [SerializeField] private GameObject _endGameMenu;
 
-    private TextMeshProUGUI _textMeshProUGUI;
+    private Text _text;
     private float _currentTime;
 
     private void Awake()
     {
         Instance = this;
-        _textMeshProUGUI = GetComponent<TextMeshProUGUI>();
+        _text = GetComponent<Text>();
         ResetTime();
-        EndGame += End;
+        StartTimer();
     }
+
 
     public void AddTime()
     {
@@ -33,20 +35,19 @@ public class Timer : MonoBehaviour
     {
         _currentTime = _startTime;
         ShowTime();
-        StartCoroutine(Tick());
     }
 
     public void StopTimer() => StopAllCoroutines();
     public void StartTimer() => StartCoroutine(Tick());
 
-    private void ShowTime() => _textMeshProUGUI.text = Math.Round(_currentTime).ToString();
+    private void ShowTime() => _text.text = Math.Round(_currentTime).ToString();
 
     private IEnumerator Tick()
     {
         while (true)
         {
             yield return new WaitForSeconds(1f);
-            if (_currentTime <= 0) EndGame?.Invoke();
+            if (_currentTime <= 0) End();
             _currentTime -= 1;
             ShowTime();
         }
@@ -54,6 +55,7 @@ public class Timer : MonoBehaviour
     
     private void End()
     {
+        _endGameMenu.SetActive(true);
         StopTimer();
     }
 }

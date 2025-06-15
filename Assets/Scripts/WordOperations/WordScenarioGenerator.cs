@@ -4,14 +4,17 @@ public class WordScenarioGenerator : MonoBehaviour
 {
     public static WordScenarioGenerator Instance { get; private set; }
 
-    [SerializeField] protected Word[] _words;
+    [SerializeField] private Word[] _words;
     [SerializeField] private GameObject _correctText;
     [SerializeField] private GameObject _wrongText;
+    [SerializeField] private AudioSource _correctAnswer;
 
     private int _currentIndex;
     private bool _isPlayed;
 
-    protected Word _currentWord;
+    private Word _currentWord;
+
+
     private void Awake()
     {
         Instance = this;
@@ -46,6 +49,7 @@ public class WordScenarioGenerator : MonoBehaviour
     {
         if (_isPlayed)
         {
+            _correctAnswer.Play();
             ShowEnd();
             return;
         }

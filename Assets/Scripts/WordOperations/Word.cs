@@ -11,9 +11,9 @@ public class Word : MonoBehaviour
     private Letter[] _wordLetters;
     private bool _isCorrect;
 
+    private Animator _animator;
     private const string SHOW_WORD = "ShowWord";
     private const string REMOVE_WORD = "RemoveWord";
-    private Animator _animator;
 
     private void Awake()
     {
@@ -63,7 +63,6 @@ public class Word : MonoBehaviour
         if (!_isCorrect) return;
         foreach (Letter letter in _wordLetters.Where(l => l is not ChoosableLetter))
             if (letter.IsMuded) return;
-
         _animator.SetTrigger(REMOVE_WORD);
     }
 

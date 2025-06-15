@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 public class Mud : MonoBehaviour
 {
     [SerializeField] private int _maxHp;
@@ -11,14 +12,19 @@ public class Mud : MonoBehaviour
 
     private Animator _animator;
     const string BREAK_MUD = "BreakMud";
+
+    private AudioSource _audioSource;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
     {
         _currentHp = _maxHp;
+        _audioSource.Play();
     }
 
     private void OnDisable()

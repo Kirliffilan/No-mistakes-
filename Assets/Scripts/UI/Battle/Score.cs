@@ -1,18 +1,21 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-[RequireComponent (typeof(TextMeshProUGUI))]
+[RequireComponent(typeof(Text))]
 public class Score : MonoBehaviour
 {
     public static Score Instance { get; private set; }
 
     private int _currentScore;
-    private TextMeshProUGUI _textMeshPro;
+    public int CurrentScore => _currentScore;
+
+    private Text _text;
 
     private void Awake()
     {
         Instance = this;
-        _textMeshPro = GetComponent<TextMeshProUGUI>();
+        _text = GetComponent<Text>();
         ResetScore();
     }
 
@@ -30,5 +33,5 @@ public class Score : MonoBehaviour
     }
 
     private void ShowScore() => 
-        _textMeshPro.text = "Ñ÷¸ò: " + _currentScore.ToString();
+        _text.text = "Ñ÷¸ò: " + _currentScore.ToString();
 }

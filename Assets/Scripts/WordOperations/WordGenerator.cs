@@ -1,6 +1,6 @@
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class WordGenerator : MonoBehaviour
 {
     public static WordGenerator Instance { get; private set; }
@@ -9,17 +9,21 @@ public class WordGenerator : MonoBehaviour
 
     private Word _currentWord;
 
+    private AudioSource _audioSource;
+
     private void Awake()
     {
         Instance = this;
+        _audioSource = GetComponent<AudioSource>();
         GetNewWord();
     }
 
     public void StopValidate() => _currentWord.StopValidate();
     public void StartValidate() => _currentWord.StartValidate();
 
-    public virtual void GetNewWord()
+    public void GetNewWord()
     {
+        _audioSource.Play();
         GetRandomWord();
     }
 
