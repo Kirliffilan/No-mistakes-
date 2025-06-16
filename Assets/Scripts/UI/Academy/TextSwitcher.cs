@@ -1,5 +1,4 @@
 using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +9,7 @@ public class TextSwitcher : MonoBehaviour
     [SerializeField] private TextAsset _inputFile;
     [SerializeField] private GameObject _textField;
     [SerializeField] private WordScenarioGenerator _wordScenarioGenerator;
+    [SerializeField] private Camera _mainCamera;
 
     private Text _textChange;
 
@@ -17,11 +17,12 @@ public class TextSwitcher : MonoBehaviour
     private string[] _text;
     private bool _isGameStarted;
 
-    private static string MAIN_MENU = "MainMenu";
+    private static readonly string MAIN_MENU = "MainMenu";
 
     private void Awake()
     {
         _textChange = GetComponent<Text>();
+        OnRectTransformDimensionsChange();
         _currentIndex = 0;
         _text = _inputFile.text.Split(new string[] { "\n", "\r", "\n\r" }, StringSplitOptions.RemoveEmptyEntries);
         ChangeText();
@@ -52,5 +53,21 @@ public class TextSwitcher : MonoBehaviour
         _wordScenarioGenerator.gameObject.SetActive(true);
         _wordScenarioGenerator.GetNewWord();
         _textField.SetActive(false);
+    }
+
+    private void OnRectTransformDimensionsChange()
+    {
+        if (_textChange == null || _mainCamera == null) return;
+
+        var width = _mainCamera.pixelWidth;
+        var height = _mainCamera.pixelHeight;
+        if (width < height || width/height == 16/9)
+        {
+            _textChange.fontSize = 70;
+        }
+        else
+        {
+            _textChange.fontSize = 45;
+        }
     }
 }

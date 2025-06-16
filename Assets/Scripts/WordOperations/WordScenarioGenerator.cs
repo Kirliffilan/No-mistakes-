@@ -14,7 +14,6 @@ public class WordScenarioGenerator : MonoBehaviour
 
     private Word _currentWord;
 
-
     private void Awake()
     {
         Instance = this;
