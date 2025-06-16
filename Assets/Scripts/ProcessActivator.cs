@@ -4,7 +4,6 @@ public class ProcessActivator : MonoBehaviour
 {
     public void DeActivate()
     {
-        WordGenerator.Instance.StopValidate();
         Timer.Instance.StopAllCoroutines();
         Bully.Instance.StopAllCoroutines();
 
@@ -22,7 +21,6 @@ public class ProcessActivator : MonoBehaviour
         HPBar.Instance.gameObject.SetActive(true);
         Score.Instance.gameObject.SetActive(true);
 
-        WordGenerator.Instance.StartValidate();
         Timer.Instance.StartTimer();
         Bully.Instance.StartThrowing();
     }

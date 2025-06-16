@@ -7,8 +7,6 @@ public class ChoosableLetter : Letter
     public static event Action WrongLetter;
     public static event Action CorrectLetter;
 
-    public bool IsPaused;
-
     public void MarkAsCorrect()
     {
         _isCorrect = true;
@@ -16,7 +14,7 @@ public class ChoosableLetter : Letter
 
     public void OnClick()
     {
-        if (IsMuded || IsPaused) return;
+        if (IsMuded) return;
 
         if (_isCorrect)
         {

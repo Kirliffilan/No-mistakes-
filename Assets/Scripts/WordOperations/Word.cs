@@ -42,22 +42,6 @@ public class Word : MonoBehaviour
         _wordLetters.Add(letter);
     }
 
-    public void StopValidate()
-    {
-        foreach (Letter letter in _wordLetters)
-        {
-            if (letter is ChoosableLetter cl) cl.IsPaused = true;
-        }
-    }
-
-    public void StartValidate()
-    {
-        foreach (Letter letter in _wordLetters)
-        {
-            if (letter is ChoosableLetter cl) cl.IsPaused = false;
-        }
-    }
-
     public void MarkAsCorrect()
     {
         _isCorrect = true;

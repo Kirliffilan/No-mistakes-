@@ -51,9 +51,6 @@ public class WordGenerator : MonoBehaviour
         }
     }
 
-    public void StopValidate() => _currentWord.StopValidate();
-    public void StartValidate() => _currentWord.StartValidate();
-
     public void GetNewWord()
     {
         _audioSource.Play();
@@ -95,7 +92,7 @@ public class WordGenerator : MonoBehaviour
             word.AddLetter(letter);
         }
 
-        Vector2 lowerStartPos = new(200, 300);
+        Vector2 lowerStartPos = new(200, 200);
         for (int i = 0; i < letters[2].Length; i++)
         {
             char currentChar = letters[2][i];
