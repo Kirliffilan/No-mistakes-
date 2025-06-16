@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class Word : MonoBehaviour
 
     public bool IsAcademy;
 
-    private Letter[] _wordLetters;
+    private List<Letter> _wordLetters = new();
     private bool _isCorrect;
 
     private Animator _animator;
@@ -19,7 +20,7 @@ public class Word : MonoBehaviour
     {
         Instance = this;
         _animator = GetComponent<Animator>();
-        _wordLetters = GetComponentsInChildren<Letter>();
+        _wordLetters.AddRange(GetComponentsInChildren<Letter>());
     }
 
     private void OnEnable()
@@ -36,6 +37,10 @@ public class Word : MonoBehaviour
         _animator.SetTrigger(REMOVE_WORD);
     }
 
+    public void AddLetter(Letter letter)
+    {
+        _wordLetters.Add(letter);
+    }
 
     public void StopValidate()
     {
@@ -93,8 +98,8 @@ public class Word : MonoBehaviour
         }
         if (!haveNotMuded) return;
 
-        int i = Random.Range(0, _wordLetters.Length);
-        while (_wordLetters[i].IsMuded) i = Random.Range(0, _wordLetters.Length);
+        int i = Random.Range(0, _wordLetters.Count);
+        while (_wordLetters[i].IsMuded) i = Random.Range(0, _wordLetters.Count);
         _wordLetters[i].GetMud();
     }
 }

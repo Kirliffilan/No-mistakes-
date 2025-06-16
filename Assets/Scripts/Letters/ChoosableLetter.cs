@@ -9,6 +9,11 @@ public class ChoosableLetter : Letter
 
     public bool IsPaused;
 
+    public void MarkAsCorrect()
+    {
+        _isCorrect = true;
+    }
+
     public void OnClick()
     {
         if (IsMuded || IsPaused) return;
