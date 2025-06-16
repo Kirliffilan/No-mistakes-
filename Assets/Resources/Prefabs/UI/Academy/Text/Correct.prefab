@@ -320,6 +320,15 @@ MonoBehaviour:
   _textField: {fileID: 8684687376214311772}
   _wordScenarioGenerator: {fileID: 0}
   _mainCamera: {fileID: 0}
+  _audioClips:
+  - {fileID: 8300000, guid: 1e335c20ab18ee244bde02f7bf003589, type: 3}
+  - {fileID: 8300000, guid: 1dde5dbb1fcfebe42bf6c2ea09af185a, type: 3}
+  - {fileID: 8300000, guid: 31ab26dffe99b3d47b9a68c822ffcd42, type: 3}
+  - {fileID: 8300000, guid: 6ac4f35e188708d4592c8313bcb6e698, type: 3}
+  - {fileID: 8300000, guid: dd5d89f1d233ad9478a665ea6f2eea26, type: 3}
+  - {fileID: 8300000, guid: 66d605d642d7fd54aaf87dbf5f31dedb, type: 3}
+  - {fileID: 8300000, guid: 3d78057f743af2d4dbd10ad14eb9be8f, type: 3}
+  - {fileID: 8300000, guid: 70e162784e2b36a4f982db3f6a8b0ab0, type: 3}
 --- !u!1 &8684687376214311772 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1836632118073406443, guid: e23d914046239b04d834ab77cc7e65e6, type: 3}

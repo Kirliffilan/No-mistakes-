@@ -3,14 +3,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
+[RequireComponent(typeof(AudioSource))]
 public class ShowAnswers : MonoBehaviour
 {
     [SerializeField] private TextAsset _inputFile;
     [SerializeField] private GameObject _textField;
     [SerializeField] private WordScenarioGenerator _wordScenarioGenerator;
     [SerializeField] private Camera _mainCamera;
+    [SerializeField] private AudioClip[] _audioClips;
 
     private Text _textChange;
+    private AudioSource _audioSource;
 
     private static int _currentIndex;
     private string[] _text;
@@ -18,6 +21,7 @@ public class ShowAnswers : MonoBehaviour
     private void Awake()
     {
         _textChange = GetComponent<Text>();
+        _audioSource = GetComponent<AudioSource>();
         OnRectTransformDimensionsChange();
         _text = _inputFile.text.Split(new string[] { "\n", "\r", "\n\r" }, StringSplitOptions.RemoveEmptyEntries);
         _currentIndex = 0;
@@ -36,8 +40,17 @@ public class ShowAnswers : MonoBehaviour
     public void ShowText()
     {
         Teacher.Instance.StartTalking();
+        PlayAudio();
         _textChange.text = _text[_currentIndex];
     }
+
+    private void PlayAudio()
+    {
+        _audioSource.Stop();
+        _audioSource.clip = _audioClips[_currentIndex];
+        _audioSource.Play();
+    }
+
 
     public void RemoveText()
     {
