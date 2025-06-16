@@ -72,7 +72,7 @@ public class WordGenerator : MonoBehaviour
 
         string[] letters = _lines[index].Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-        if (letters.Length != 3)
+        if (letters.Length < 3)
         {
             Debug.LogError($"Invalid line format at index {index}. Expected 3 parts, got {letters.Length}");
             return;
