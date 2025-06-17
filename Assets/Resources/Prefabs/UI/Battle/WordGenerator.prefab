@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6509639962806394709}
   - component: {fileID: 2234854623489350806}
   - component: {fileID: 2620103808915806094}
+  - component: {fileID: 4795505527411309013}
   m_Layer: 5
   m_Name: WordGenerator
   m_TagString: Untagged
@@ -213,3 +214,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4795505527411309013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7038135054258567206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6827040233839b14e9debb4abbdb6dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volumeKeeper: {fileID: 11400000, guid: d3f938f52b9d0b1448bf8e2c32d58ef9, type: 2}
+  _isMusic: 0

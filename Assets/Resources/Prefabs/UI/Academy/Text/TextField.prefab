@@ -139,8 +139,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 50, y: 0}
-  m_SizeDelta: {x: -130, y: -20}
+  m_AnchoredPosition: {x: 45, y: 0}
+  m_SizeDelta: {x: -120, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3072361580849479456
 Canvas:
@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 5346752871703596299}
   - component: {fileID: 2608310326630746217}
   - component: {fileID: 2016805893967264143}
+  - component: {fileID: 5853735328569275865}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -424,6 +425,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5853735328569275865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5800192967488878208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6827040233839b14e9debb4abbdb6dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volumeKeeper: {fileID: 11400000, guid: d3f938f52b9d0b1448bf8e2c32d58ef9, type: 2}
+  _isMusic: 0
 --- !u!1 &5820790306453456307
 GameObject:
   m_ObjectHideFlags: 0

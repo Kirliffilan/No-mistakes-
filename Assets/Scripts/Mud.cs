@@ -27,11 +27,6 @@ public class Mud : MonoBehaviour
         _audioSource.Play();
     }
 
-    private void OnDisable()
-    {
-        MudDisabled?.Invoke();
-    }
-
     public void OnClick()
     {
         _currentHp--;
@@ -40,6 +35,7 @@ public class Mud : MonoBehaviour
 
     public void Disable()
     {
+        MudDisabled?.Invoke();
         gameObject.SetActive(false);
     }
 }
