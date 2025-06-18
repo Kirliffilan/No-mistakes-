@@ -23,6 +23,7 @@ public class EndGameHandler : MonoBehaviour
         _pauseButton.SetActive(true);
         _bullyLaugh.SetActive(false);
         _processActivator.Activate();
+        WordGenerator.Instance.GetNewWord();
         Score.Instance.ResetScore();
         Timer.Instance.ResetTime();
         Bully.Instance.ResetCooldown();

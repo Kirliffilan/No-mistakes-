@@ -217,6 +217,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6735488372688036796}
     m_Modifications:
+    - target: {fileID: 2205495542546666964, guid: 52309ac6c6ce3fa4b95414be1c758d8d, type: 3}
+      propertyPath: m_Text
+      value: "\u0417\u0412\u0423\u041A\u0418"
+      objectReference: {fileID: 0}
     - target: {fileID: 4500818664163572715, guid: 52309ac6c6ce3fa4b95414be1c758d8d, type: 3}
       propertyPath: m_Name
       value: Settings

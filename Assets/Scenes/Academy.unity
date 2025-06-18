@@ -307,7 +307,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: _Settings
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5979839971803089403, guid: ff9712a7ee848864183b6451cf4c9888, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -317,6 +318,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6735488372688036796, guid: ff9712a7ee848864183b6451cf4c9888, type: 3}
   m_PrefabInstance: {fileID: 755219401}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &755219403 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2844815650685064450, guid: ff9712a7ee848864183b6451cf4c9888, type: 3}
+  m_PrefabInstance: {fileID: 755219401}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &755219404 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8322085540439814960, guid: ff9712a7ee848864183b6451cf4c9888, type: 3}
+  m_PrefabInstance: {fileID: 755219401}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &815538491 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 551073096914246827, guid: 6063a7e6ec543414294648201719b36d, type: 3}
@@ -782,6 +805,7 @@ GameObject:
   - component: {fileID: 1449518258}
   - component: {fileID: 1449518263}
   - component: {fileID: 1449518264}
+  - component: {fileID: 1449518265}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -997,6 +1021,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _volumeKeeper: {fileID: 11400000, guid: d3f938f52b9d0b1448bf8e2c32d58ef9, type: 2}
   _isMusic: 0
+--- !u!114 &1449518265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449518256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7577c920717216e46b5d3d08114a2375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volumeKeeper: {fileID: 11400000, guid: d3f938f52b9d0b1448bf8e2c32d58ef9, type: 2}
+  _musicSlider: {fileID: 755219404}
+  _voiceSlider: {fileID: 755219403}
 --- !u!114 &1453417290 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5346752871703596299, guid: e23d914046239b04d834ab77cc7e65e6, type: 3}

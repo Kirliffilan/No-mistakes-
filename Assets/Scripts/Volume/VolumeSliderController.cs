@@ -18,7 +18,6 @@ public class VolumeSliderController : MonoBehaviour
         _musicSlider.value = _volumeKeeper.musicVolume;
         _voiceSlider.value = _volumeKeeper.voiceVolume;
 
-
         _musicSlider.onValueChanged.AddListener(ChangeMusic);
         _voiceSlider.onValueChanged.AddListener(ChangeVoice);
     }
