@@ -4,10 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class VolumeApplier : MonoBehaviour
 {
-    private static List<VolumeApplier> _all = new();
+    private static List<VolumeApplier> _all = new(); //все экземпл€ры класса
 
-    [SerializeField] private VolumeKeeper _volumeKeeper;
-    [SerializeField] private bool _isMusic = false;
+    [SerializeField] private VolumeKeeper _volumeKeeper; //скриптабл обжект
+    [SerializeField] private bool _isMusic = false; //€вл€етс€ музыкой или звуком
 
     private AudioSource _audioSource;
 
@@ -23,7 +23,7 @@ public class VolumeApplier : MonoBehaviour
         _all.Remove(this);
     }
 
-    public static void UpdateVolume()
+    public static void UpdateVolume() //обновл€ет громкость дл€ всех экземпл€ров класса
     {
         foreach (var applier in _all)
         {

@@ -3,14 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    [SerializeField] private string _sceneName;
+    [SerializeField] private string _sceneName; //название сцены
 
-    public void ChangeScene()
+    public void ChangeScene() //смена сцены
     {
         SceneManager.LoadScene(_sceneName);
     }
 
-    public void CloseScene()
+    public void CloseScene() //выход из игры
     {
         Application.Quit();
     }

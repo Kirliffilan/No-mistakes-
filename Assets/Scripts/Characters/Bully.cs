@@ -37,22 +37,22 @@ public class Bully : MonoBehaviour
         ChoosableLetter.WrongLetter -= Laugh;
     }
 
-    private void Laugh()
+    private void Laugh() //проигрыватель анимации смеха при неправильной букве
     {
         _animator.SetTrigger(LAUGH);
         _audioSource.Play();
     }
 
-    public void StartThrowing() => StartCoroutine(ThrowMud());
+    public void StartThrowing() => StartCoroutine(ThrowMud()); //начинает корутину для бросков грязью
 
-    public void ReduceCooldown()
+    public void ReduceCooldown() //уменьшает кулдаун броска
     {
         if (_currentCooldown <= _minCooldown) return;
 
         _currentCooldown -= 1;
     }
 
-    public void ResetCooldown()
+    public void ResetCooldown() //возвращает исходный кулдаун при проигрыше
     {
         _currentCooldown = _maxCooldown;
     }
@@ -61,12 +61,12 @@ public class Bully : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(_currentCooldown);
-            _animator.SetTrigger(THROW);
+            yield return new WaitForSeconds(_currentCooldown); //зависит от текущего кулдауна
+            _animator.SetTrigger(THROW); //анимация броска
         }
     }
 
-    private void Throw()
+    private void Throw() //активируется в анимации броска
     {
         Word.Instance.GetRandomMud();
     }

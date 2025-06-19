@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class VolumeSliderController : MonoBehaviour
 {
     [SerializeField] private VolumeKeeper _volumeKeeper;
-    [SerializeField] private Slider _musicSlider;
-    [SerializeField] private Slider _voiceSlider;
+    [SerializeField] private Slider _musicSlider; //слайдер дл€ музыки
+    [SerializeField] private Slider _voiceSlider; //слайдер дл€ звуков
 
     private const string MUSIC = "Music";
     private const string VOICE = "Voice";
@@ -20,23 +20,24 @@ public class VolumeSliderController : MonoBehaviour
 
         _musicSlider.onValueChanged.AddListener(ChangeMusic);
         _voiceSlider.onValueChanged.AddListener(ChangeVoice);
+        VolumeApplier.UpdateVolume();
     }
 
-    private void ChangeMusic(float value)
+    private void ChangeMusic(float value) //мен€ет громкость музыки
     {
-        PlayerPrefs.SetFloat(MUSIC, value);
+        PlayerPrefs.SetFloat(MUSIC, value); //обновл€ет значени€
         _volumeKeeper.musicVolume = value;
-        VolumeApplier.UpdateVolume();
+        VolumeApplier.UpdateVolume(); //примен€ет громкость
     }
 
-    private void ChangeVoice(float value)
+    private void ChangeVoice(float value) //мен€ет громкость звуков
     {
-        PlayerPrefs.SetFloat(VOICE, value);
+        PlayerPrefs.SetFloat(VOICE, value);//обновл€ет значени€
         _volumeKeeper.voiceVolume = value;
-        VolumeApplier.UpdateVolume();
+        VolumeApplier.UpdateVolume(); //примен€ет громкость
     }
 
-    private void OnDisable()
+    private void OnDisable() //сохран€ет значени€
     {
         PlayerPrefs.Save();
     }

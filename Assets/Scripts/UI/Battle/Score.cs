@@ -19,19 +19,19 @@ public class Score : MonoBehaviour
         ResetScore();
     }
 
-    public void AddScore()
+    public void AddScore() //Добавляет счёт
     {
         _currentScore++;
         ShowScore();
         if (_currentScore % 10 == 0) Bully.Instance.ReduceCooldown();
     }
 
-    public void ResetScore()
+    public void ResetScore() //восстанавливает счёт
     {
         _currentScore = 0;
         ShowScore();
     }
 
-    private void ShowScore() => 
+    private void ShowScore() => //показывает счёт
         _text.text = "Счёт: " + _currentScore.ToString();
 }

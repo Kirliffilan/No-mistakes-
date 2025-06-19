@@ -6,11 +6,11 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class ShowAnswers : MonoBehaviour
 {
-    [SerializeField] private TextAsset _inputFile;
-    [SerializeField] private GameObject _textField;
-    [SerializeField] private WordScenarioGenerator _wordScenarioGenerator;
+    [SerializeField] private TextAsset _inputFile; //файл с репликами
+    [SerializeField] private GameObject _textField; //текстовое поле
+    [SerializeField] private WordScenarioGenerator _wordScenarioGenerator; //генератор слов
     [SerializeField] private Camera _mainCamera;
-    [SerializeField] private AudioClip[] _audioClips;
+    [SerializeField] private AudioClip[] _audioClips; //звучащие реплики
 
     private Text _textChange;
     private AudioSource _audioSource;
@@ -32,27 +32,26 @@ public class ShowAnswers : MonoBehaviour
         ShowText();
     }
 
-    public void AddIndex()
+    public void AddIndex() //переход к следующему
     {
         _currentIndex++;
     }
 
-    public void ShowText()
+    public void ShowText() //показывает текст и включает анимацию учителю
     {
         Teacher.Instance.StartTalking();
         PlayAudio();
         _textChange.text = _text[_currentIndex];
     }
 
-    private void PlayAudio()
+    private void PlayAudio() //воспроизводит текущую реплику
     {
         _audioSource.Stop();
         _audioSource.clip = _audioClips[_currentIndex];
         _audioSource.Play();
     }
 
-
-    public void RemoveText()
+    public void RemoveText() //деактивирует текст и отключает анимацию учителя
     {
         Teacher.Instance.StopTalking();
         _textField.SetActive(false);

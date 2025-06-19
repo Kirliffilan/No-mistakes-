@@ -47,14 +47,7 @@ public class Word : MonoBehaviour
         _isCorrect = true;
     }
 
-    public void CheckMud()
-    {
-        if (!_isCorrect) return;
-        foreach (Letter letter in _wordLetters.Where(l => l is not ChoosableLetter))
-            if (letter.IsMuded) return;
-        _animator.SetTrigger(REMOVE_WORD);
-    }
-
+    
     private void DoNext()
     {
         if (IsAcademy)
@@ -68,11 +61,19 @@ public class Word : MonoBehaviour
             Timer.Instance.AddTime();
         }
     }
+    
+    public void CheckMud()
+    {
+        if (!_isCorrect) return;
+        foreach (Letter letter in _wordLetters.Where(l => l is not ChoosableLetter)) //проверка только букв в слове
+            if (letter.IsMuded) return;
+        _animator.SetTrigger(REMOVE_WORD); //анимация вылета слова
+    }
 
     public void GetRandomMud()
     {
         bool haveNotMuded = false;
-        foreach (Letter letter in _wordLetters)
+        foreach (Letter letter in _wordLetters) //проверка на случай, если все буквы уже в грязи
         {
             if (!letter.IsMuded)
             {
@@ -83,7 +84,7 @@ public class Word : MonoBehaviour
         if (!haveNotMuded) return;
 
         int i = Random.Range(0, _wordLetters.Count);
-        while (_wordLetters[i].IsMuded) i = Random.Range(0, _wordLetters.Count);
+        while (_wordLetters[i].IsMuded) i = Random.Range(0, _wordLetters.Count); //добавление шрязи только на чистые буквы
         _wordLetters[i].GetMud();
     }
 }

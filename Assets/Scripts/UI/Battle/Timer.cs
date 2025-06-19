@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,25 +23,24 @@ public class Timer : MonoBehaviour
         StartTimer();
     }
 
-
-    public void AddTime()
+    public void AddTime() //добавление к таймеру при правильном слове
     {
         _currentTime += _addingTime;
         ShowTime();
     }
 
-    public void ResetTime()
+    public void ResetTime() //возврат времени при проигрыше
     {
         _currentTime = _startTime;
         ShowTime();
     }
 
-    public void StopTimer() => StopAllCoroutines();
-    public void StartTimer() => StartCoroutine(Tick());
+    public void StopTimer() => StopAllCoroutines(); //остановка таймера
+    public void StartTimer() => StartCoroutine(Tick()); //запуск таймера
 
-    private void ShowTime() => _text.text = Math.Round(_currentTime).ToString();
+    private void ShowTime() => _text.text = Math.Round(_currentTime).ToString(); //показ таймера
 
-    private IEnumerator Tick()
+    private IEnumerator Tick() //корутина для тика таймера(1 секунда)
     {
         while (true)
         {
@@ -53,7 +51,7 @@ public class Timer : MonoBehaviour
         }
     }
     
-    private void End()
+    private void End() //если время закончилось
     {
         _endGameMenu.SetActive(true);
         StopTimer();

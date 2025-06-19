@@ -21,13 +21,13 @@ public class Letter : MonoBehaviour
         _mud.MudDisabled -= BreakMud;
     }
 
-    public void GetMud()
+    public void GetMud() //добавление грязи
     {
         _isMuded = true;
         _mud.gameObject.SetActive(true);
     }
 
-    public void BreakMud()
+    public void BreakMud() //удаление грязи
     {
         _isMuded = false;
         Word.Instance.CheckMud();

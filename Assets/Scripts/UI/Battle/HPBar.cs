@@ -23,13 +23,13 @@ public class HPBar : MonoBehaviour
         ChoosableLetter.WrongLetter -= HPdown;
     }
 
-    public void HPdown()
+    public void HPdown() //уменьшает здоровье
     {
         HPs[_currentIndex++].SetActive(false);
-        if (_currentIndex == HPs.Length) _endGameMenu.SetActive(true);
+        if (_currentIndex == HPs.Length) _endGameMenu.SetActive(true); //заканчивает игру при окончании здоровья
     }
 
-    public void ResetHP()
+    public void ResetHP() //восстанавливает здоровье
     {
         _currentIndex = 0;
         foreach(var HP in HPs)
