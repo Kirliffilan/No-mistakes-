@@ -13,6 +13,6 @@ public class ScoreHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        _text.text = "»гры окончена\n—чЄт: " + Score.Instance.CurrentScore;
+        _text.text = "»гра окончена\n—чЄт: " + Score.Instance.CurrentScore;
     }
 }

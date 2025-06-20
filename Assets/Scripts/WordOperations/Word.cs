@@ -27,6 +27,7 @@ public class Word : MonoBehaviour
     {
         ChoosableLetter.CorrectLetter += MarkAsCorrect;
         ChoosableLetter.CorrectLetter += CheckMud;
+        ChoosableLetter.WrongLetter += MarkAsWrong;
         _animator.SetTrigger(SHOW_WORD);
     }
 
@@ -34,6 +35,7 @@ public class Word : MonoBehaviour
     {
         ChoosableLetter.CorrectLetter -= MarkAsCorrect;
         ChoosableLetter.CorrectLetter -= CheckMud;
+        ChoosableLetter.WrongLetter -= MarkAsWrong;
         _animator.SetTrigger(REMOVE_WORD);
     }
 
@@ -47,6 +49,10 @@ public class Word : MonoBehaviour
         _isCorrect = true;
     }
 
+    private void MarkAsWrong()
+    {
+        _isCorrect = false;
+    }
     
     private void DoNext()
     {
